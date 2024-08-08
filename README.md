@@ -10,7 +10,7 @@ This repository contains the code for Reachinbox frontend App using React with J
 
 ## Deployment
 
-The application is deployed on Vercel and can be accessed [here](https://reachinbox-assignment-seven.vercel.app/).
+The application is deployed on Vercel and can be accessed here [https://reachinbox-assignment-seven.vercel.app/].
 
 
 ## Demo Video :- 
