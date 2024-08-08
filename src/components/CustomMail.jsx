@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import axios from "axios";
 import { useState } from "react";
 import { BsLightningChargeFill } from "react-icons/bs";
@@ -121,8 +122,8 @@ function CustomMail({ threadId, onClose }) {
           >
             Send <FaCaretDown className="ml-4" />
           </div>
-          <div className="flex items-center text-[#ADADAD]">
-            <BsLightningChargeFill className="mr-3" />
+          <div className="flex items-center text-[#ADADAD] cursor-pointer">
+            <BsLightningChargeFill className="mr-3 " />
             Variables
           </div>
           <div className="flex items-center text-[#ADADAD]">
@@ -154,5 +155,10 @@ function CustomMail({ threadId, onClose }) {
     </div>
   );
 }
+
+CustomMail.propTypes = {
+  threadId: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 
 export default CustomMail;

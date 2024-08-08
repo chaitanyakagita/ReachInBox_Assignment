@@ -9,19 +9,19 @@ function OneBox() {
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const token = queryParams.get("token");
+  const tokenFromUrl = queryParams.get("token");
 
   useEffect(() => {
-    if (token) {
-      localStorage.setItem("token", `Bearer ${token}`);
+    const storedToken = localStorage.getItem("token");
+
+    if (tokenFromUrl) {
+      // Store the token in localStorage with the Bearer prefix
+      localStorage.setItem("token", `Bearer ${tokenFromUrl}`);
       navigate('/'); // Navigate to the main page after setting the token
-    } else {
-      const storedToken = localStorage.getItem("token");
-      if (!storedToken) {
-        navigate("/login");
-      }
+    } else if (!storedToken) {
+      navigate("/login");
     }
-  }, [token, navigate]);
+  }, [tokenFromUrl, navigate]);
 
   const [selectedComponent, setSelectedComponent] = useState("/");
 
