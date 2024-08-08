@@ -16,7 +16,7 @@ function Login() {
 
   const handleGoogleLogin = () => {
     // Redirect to Google login URL
-    window.location.href = "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reachinbox-assignment-seven.vercel.app/";
+    window.location.href = "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reachinbox-assignment-seven.vercel.app/"
   };
 
   return (
@@ -32,14 +32,14 @@ function Login() {
               className="mt-6 border-white/40 border px-20 py-2 text-sm flex items-center text-[#CCCCCC] rounded-lg cursor-pointer"
               onClick={handleGoogleLogin}
             >
-              <img src={google} alt="google" className="w-4 mr-3" />
+              <img src={google} alt="google" className="w-4 mr-3"></img>
               Sign Up with Google
             </div>
           </div>
 
           <div>
             <Link
-              to="/signup"
+              to="/login"
               className="bg-gradient-to-r from-[#4B63DD] to-[#0524BFFC] mx-16 mt-5 px-6 text-sm py-3 rounded-md cursor-pointer"
             >
               Create an Account
@@ -47,6 +47,7 @@ function Login() {
             <div className="my-8 mb-10 text-[#909296]">
               Already have an account?{" "}
               <Link to="/signin" className="text-[#C1C2C5]">
+                {" "}
                 Sign In
               </Link>
             </div>

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import axios from "axios";
 import { CiSearch } from "react-icons/ci";
 import { FaAngleDown } from "react-icons/fa";
@@ -7,41 +6,32 @@ import { IoIosSend } from "react-icons/io";
 import { TbReload } from "react-icons/tb";
 
 function AllInbox({ data, loadMail }) {
-  const reloadHandler = async () => {
+  async function reloadHandler() {
     const token = localStorage.getItem("token");
-    if (!token) {
-      console.error("No token found");
-      return;
-    }
+    await axios.get("https://hiring.reachinbox.xyz/api/v1/onebox/reset", {
+      headers: {
+        Authorization: token,
+      },
+    });
 
-    try {
-      await axios.get("https://hiring.reachinbox.xyz/api/v1/onebox/reset", {
-        headers: {
-          Authorization: token, // Ensure the token is included with the Bearer prefix
-        },
-      });
-      console.log("Data reloaded successfully");
-    } catch (error) {
-      console.error("Error reloading data:", error);
-    }
-  };
+    console.log("clicked");
+  }
 
   if (!Array.isArray(data)) {
     console.error("Data is not an array:", data);
-    return null; // Handle error or provide a fallback UI
+    return null; // or render a placeholder, or handle the error as needed
   }
-
   return (
     <div className="border-r-2 bg-[#FAFAFA] dark:bg-black dark:border-[#33383F] border-[#E0E0E0] h-full overflow-y-scroll no-scrollbar">
       <div className="px-4 pt-4 flex justify-between">
         <div className="px-4">
           <div className="text-2xl py-3 text-[#4285F4] font-semibold flex items-center">
-            All Inbox(s)
+            All Inbox(s){" "}
             <FaAngleDown className="ml-2 font-normal mt-1 cursor-pointer" />
           </div>
           <div className="dark:text-white text-black font-bold">
-            {data.length}/25
-            <span className="text-[#7F7F7F] font-normal"> Inboxes selected</span>
+            {data.length}/25{" "}
+            <span className="text-[#7F7F7F] font-normal">Inboxes selected</span>
           </div>
         </div>
         <div
@@ -88,18 +78,6 @@ function AllInbox({ data, loadMail }) {
   );
 }
 
-AllInbox.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      fromEmail: PropTypes.string.isRequired,
-      subject: PropTypes.string.isRequired,
-      threadId: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  loadMail: PropTypes.func.isRequired,
-};
-
 function Mail({ fromEmail, subject, threadId, loadMail }) {
   const trimSubject = (subject, wordCount) => {
     const words = subject.split(" ");
@@ -120,12 +98,8 @@ function Mail({ fromEmail, subject, threadId, loadMail }) {
     >
       <div>
         <div className="flex justify-between">
-          <div className="dark:text-white text-black text-lg font-normal">
-            {fromEmail}
-          </div>
-          <div className="dark:text-[#FCFCFC66] text-[#919EAB] font-thin pr-3">
-            Mar 7
-          </div>
+          <div className="dark:text-white text-black text-lg font-normal">{fromEmail}</div>
+          <div className="dark:text-[#FCFCFC66] text-[#919EAB] font-thin pr-3">Mar 7</div>
         </div>
         <div className="py-2 dark:text-[#E1E0E0] text-gray-600 font-normal">
           {trimSubject(subject, 7)}
@@ -144,12 +118,5 @@ function Mail({ fromEmail, subject, threadId, loadMail }) {
     </div>
   );
 }
-
-Mail.propTypes = {
-  fromEmail: PropTypes.string.isRequired,
-  subject: PropTypes.string.isRequired,
-  threadId: PropTypes.string.isRequired,
-  loadMail: PropTypes.func.isRequired,
-};
 
 export default AllInbox;
