@@ -1,27 +1,49 @@
-# ReachInbox.AI: React Project
+# ReachInBox-Frontend
 
----
+## Overview
+This repository contains the code for Reachinbox frontend App using React with Javascript for an assignment given by Reachinbox.
 
-## Overview  
+## Technologies Used ( Frontend )
+  - Javascript
+  - React
+  - Tailwind css
 
-This project is a React application done by using given figma file https://www.figma.com/file/uECxqvFhEx9dn4ZuO7wqmu/Reachinbox-Assignment?type=design&node-id=0-1&mode=design
-and api documentation https://documenter.getpostman.com/view/30630244/2sA2rCTMKr#433eb613-e405-4239-9e2d-f20485b31b27
+## Deployment
 
----
+The application is deployed on Vercel and can be accessed [here](https://reachinbox-assignment-seven.vercel.app/).
 
-## Installation
 
-To install and run this project on your local machine, follow these steps:
+ # How to Run <br/>
+ 
+   <h2>Installation</h2>
+   
+   Clone the repository:   ``` git clone https://github.com/chaitanyakagita/Reachinbox_Assignment.git  ``` <br/>
+   Navigate to the project directory:   ``` cd reachinbox ``` <br/>
+   Install the dependencies:   ``` npm install ``` <br/>
+   Start the development server:   ``` npm run start ``` <br/>
+   Open your browser and visit:   ``` http://localhost:3000 ``` <br/>
+   
 
-1. **Clone Repository:**
-   ```bash
-   git clone https://github.com/chaitanyakagita/Reachinbox_Assignment.git
+   ## Features 
+   
+  - Authentication
+  - Get Emails
+  - Post (send) Email
+  - Delete Email
 
-   cd into project
 
-   run `npm install`
+   <h2>Endpoints</h2>
+   <h3>All Emails</h3>
+   <pre><code>GET {{baseurl}}/onebox/list </code></pre>
 
-   run `npm run dev`
+   <h3>All Emails from Onebox</h3>
+   <pre><code>GET {{baseurl}}/onebox/messages/:thread_id </code></pre>
 
-   then it will open in your browser 
-   http://localhost:5173/
+   <h3>Add Onebox Mail</h3>
+   <pre><code>POST {{baseurl}}/onebox/reply/:thread_id </code></pre>
+
+   <h3>Delete Email</h3>
+   <pre><code>DELETE {{baseurl}}/onebox/messages/:thread_id </code></pre>
+
+ 
+  
