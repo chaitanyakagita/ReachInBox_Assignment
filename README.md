@@ -21,7 +21,7 @@ The application is deployed on Vercel and can be accessed [here](https://reachin
    Navigate to the project directory:   ``` cd reachinbox ``` <br/>
    Install the dependencies:   ``` npm install ``` <br/>
    Start the development server:   ``` npm run start ``` <br/>
-   Open your browser and visit:   ``` http://localhost:3000 ``` <br/>
+   Open your browser and visit:   ``` http://localhost:5173 ``` <br/>
    
 
    ## Features 
