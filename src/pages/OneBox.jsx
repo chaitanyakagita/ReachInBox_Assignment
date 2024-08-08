@@ -13,7 +13,6 @@ function OneBox() {
 
   useEffect(() => {
     if (token) {
-      console.log('Token from URL:', token); // Log the token for debugging
       localStorage.setItem("token", `Bearer ${token}`);
       navigate('/'); // Navigate to the main page after setting the token
     } else {
