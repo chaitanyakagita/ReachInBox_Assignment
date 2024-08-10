@@ -51,9 +51,11 @@ https://www.loom.com/share/3b5534a9c73045d29b5e04fa84d4db73?sid=44a28504-6270-45
    
   - Login Authentication (/google-login)
   - Light and Dark Mode
-  - Get All Emails
-  - Reply Email
+  - Get All Emails (fetching of data in OneBox using API integration)
+  - Custom Text Editor
+  - Reply (Send) Email
   - Delete Email
+  - Keyboard shortcuts in OneBox:- “D” should delete and “R” should open Reply box
 
 
    <h2>Endpoints</h2>
