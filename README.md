@@ -49,9 +49,10 @@ https://www.loom.com/share/3b5534a9c73045d29b5e04fa84d4db73?sid=44a28504-6270-45
 
    ## Features 
    
-  - Login Authentication
+  - Login Authentication (/google-login)
+  - Light and Dark Mode
   - Get All Emails
-  - Post (send) Email
+  - Reply Email
   - Delete Email
 
 
