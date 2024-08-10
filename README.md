@@ -59,6 +59,7 @@ https://www.loom.com/share/3b5534a9c73045d29b5e04fa84d4db73?sid=44a28504-6270-45
 
 
    <h2>Endpoints</h2>
+    Base URL : "https://hiring.reachinbox.xyz/api/v1/"
    <h3>List All Emails</h3>
    <pre><code>GET {{baseurl}}/onebox/list </code></pre>
 
