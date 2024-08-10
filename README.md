@@ -60,7 +60,7 @@ https://www.loom.com/share/3b5534a9c73045d29b5e04fa84d4db73?sid=44a28504-6270-45
    <h3>List All Emails</h3>
    <pre><code>GET {{baseurl}}/onebox/list </code></pre>
 
-   <h3>Get Messages from Onebox</h3>
+   <h3>Get Messages in Onebox</h3>
    <pre><code>GET {{baseurl}}/onebox/messages/:thread_id </code></pre>
 
    <h3>Reply Email</h3>
